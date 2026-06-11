@@ -1,5 +1,7 @@
 # AI 開発ワークショップ アウトライン & 詳細解説
 
+> **最終更新: 2026年6月11日** — Jina AIを使用したWeb横断検索による最新情報に更新済み
+
 本ドキュメントは、「AIを活用した現代的なソフトウェア開発」を学ぶワークショップのアウトラインおよび講義用詳細資料です。
 
 ---
@@ -19,35 +21,60 @@ AIがコードを自動生成する時代において、エンジニアやプラ
   - プロンプトにどれだけ「具体的で詳細な文脈（Context）」を与えられるかが、成果物のクオリティを左右します。
 
 ### ③ 「モデル」と「エージェント」の違い
-- **モデル (Model)**: 知識や推論能力を提供する「脳」にあたる存在（例：GPT-4, Claude 3.5 Sonnet, Gemini 1.5 Pro）。
+- **モデル (Model)**: 知識や推論能力を提供する「脳」にあたる存在（例：GPT-5.4, Claude Sonnet 4.6, Gemini 3.5 Flash）。
 - **エージェント (Agent)**: 脳の命令を受けて、実際にファイルを読み書きしたり、ターミナルでコマンドを実行したり、ブラウザを操作して検証を行う「手足」を持った自律プログラム。
 - **現在地**: 単にチャットでAIと会話する時代から、**エージェントが開発環境と統合され、動くソフトウェアを自動で構築・検証してくれる時代**へと移行しています。今最も価値があるのは、脳内にあるアイデアを「実際に動いて利用価値があるソフトウェア」として素早く展開することです。
 
 ### ④ 「無料」を使い倒せ & アカウントの特権を活かせ
 - **個人の無料枠**: 各社が提供している無料枠、無料プラン（Google AI Studio、Claude Consoleの初期枠など）を組み合わせることで、お金をかけずに強力な開発環境・API環境を作れます。
 - **大学アカウントの活用 (特権)**:
-  - **Microsoft 365 大学アカウント**: 大学が提供する学内アカウントは多くの場合、有料プラン（Microsoft 365 Copilot）が利用可能です。組織向けセキュリティ（商用データ保護）が適用された状態で、GPT-4oなどの最新GPTモデルを安全かつ無料で利用できます。
-  - **Google Workspace 大学アカウント**: 同様に、学術機関向けセキュリティが保証された環境でGemini等の高性能モデルを安全に利用できます。これらはデータがモデルの再学習に使用されないため、開発中のコードや機密性の高いアイデアを入力する際にも安心して使えます。
+  - **Microsoft 365 大学アカウント (MS Copilot 365)**: 大学が提供する学内の有料アカウントを使えば、組織向けセキュリティ（商用データ保護）が適用された状態で、**GPT-5.4 / GPT-5.5** などの最新GPTモデルを安全かつ無料で利用できます。プロンプトやコードがモデルの再学習に使用されないため、開発中のコードも安心して入力できます。
+  - **Google Workspace 大学アカウント**: 同様に、学術機関向けセキュリティが保証された環境でGemini等の高性能モデルを安全に利用できます。
 
 ---
 
-## 2. モデル (Models) - 各プラットフォームの概要
+## 2. モデル (Models) - 各プラットフォームの最新概要
 
-開発で使用される主要な大規模言語モデル（LLM）の特徴を比較します。
+> **2026年6月11日現在の情報**（各公式サイトより）
 
-### GPT (OpenAI)
-- **ChatGPT**: 最も普及している対話型AI。最新モデル（GPT-4o等）は高速で、汎用的なコーディング指示に強い。
-- **Codex (現行のAPI/モデル群に統合)**: かつてGitHub Copilotの基盤となった、コード生成に特化したモデル群。
+開発で使用される主要な大規模言語モデル（LLM）の最新系列を整理します。
 
-### Claude (Anthropic)
-- **Claude**: 日本語の自然な表現や、極めて高い倫理的・論理的推論能力が強み。コードのバグ修正やアルゴリズム設計において高い評価を得ています。
-- **Claude Code**: Anthropicが開発した、ターミナル上で自律的に動作する最新のコーディングエージェント。
+### GPT (OpenAI) — 最新モデル: GPT-5 系列
+| モデル名 | コンテキスト | 特徴 | 主な用途 |
+| :--- | :--- | :--- | :--- |
+| **GPT-5.5** | 1.05M tokens | 最上位フラッグシップ | 最高精度の推論・複雑なエージェントタスク |
+| **GPT-5.4** | 1.05M tokens | 高性能・汎用 | コーディング、多段推論、文書生成 |
+| **GPT-5.4 mini** | 400K tokens | 高速・低コスト | 大量処理、日常的なコーディング補助 |
 
-### Gemini / Google AI Studio (Google)
-- **Gemini**: 超巨大なコンテキストウィンドウ（100万〜200万トークン）を持ち、リポジトリ全体のコードや膨大なドキュメントを一括して読み込めるのが強み。
-- **Google AI Studio**: Googleの提供するWebベースの開発者向け無料プラットフォーム。Gemini 1.5 Pro / FlashのAPIキーを無料で発行でき、システム指示（System Instructions）や安全設定を細かく調整しながらプログラミング補助やコード生成の検証を高速に行うことができます。コーディング支援能力が非常に高く、API呼び出し回数の無料枠も太っ腹です。
+- **ChatGPT**: ブラウザ/アプリ/デスクトップから手軽に使える対話型AI。最新GPT-5系列を搭載。
+- **Codex**: コード生成に特化した系列。現在のOpenAI APIに統合されており、GPT-5でより高精度なコード生成が可能。
+- **OpenAI Platform (Playground)**: APIキーの発行、モデルのテスト、プロンプト調整を行う開発者向けWebサービス。
+
+### Claude (Anthropic) — 最新モデル: Claude 4〜5系列
+| モデル名 | 特徴 | 主な用途 |
+| :--- | :--- | :--- |
+| **Claude Mythos** | 最上位・次世代最高推論 | 高度な知識労働、研究・科学的推論 |
+| **Claude Fable** | 高性能フラッグシップ | 複雑なコーディング・文書作成 |
+| **Claude Opus 4.7** | 高性能・汎用上位 | エンタープライズ向け高精度タスク |
+| **Claude Sonnet 4.6** | バランス型・標準モデル | 日常のコーディング補助・テキスト生成 |
+| **Claude Haiku** | 高速・軽量 | 大量テキスト処理・シンプルなタスク |
+
+- **Claude Code**: Anthropicが開発した、ターミナル上で自律的に動作するコーディング専用エージェント（CLI）。
+- **Claude Cowork**: デスクトップアプリと連携し、ローカルファイルやクラウドアプリに対してタスクを自律実行する新サービス。
+- **Claude Security**: セキュリティ分析・脆弱性検出に特化したプロダクト。
+
+### Gemini / Google AI Studio (Google) — 最新: Gemini 3.5 系列
+| モデル名 | 特徴 | 主な用途 |
+| :--- | :--- | :--- |
+| **Gemini 3.5 Flash** | フロンティア性能・エージェント特化 | コーディング・マルチエージェントワークフロー |
+| **Gemini 3.1 Pro** | 複雑タスク・高精度 | 複雑な推論・創造的タスク |
+| **Gemini 3.1 Deep Think** | 科学・研究・工学向け最高推論 | 高度な科学推論・複雑な問題解決 |
+| **Gemini 3.1 Flash-Lite** | 高効率・低コスト | 大量処理・シンプルなタスク |
+
+- **Google AI Studio**: Gemini APIキーの無料発行と、モデルの動作テスト（System Instructions設定含む）ができる開発者向けWebプラットフォーム。コーディング支援能力が非常に高く、無料枠も豊富。
 - **Gemini CLI**: コマンドラインからGeminiの強力な機能にアクセスするためのユーティリティ。
-- **Antigravity**: 本開発環境で動作しているような、より高度な意思決定とファイル編集能力を持つ自律型エージェント。
+- **Google Antigravity** (本ツール): GoogleのAI-firstな開発プラットフォーム。Gemini 3.5 Flashを搭載した自律型エージェントが、ファイル編集からターミナル操作、ブラウザ検索まで開発作業全体を担う。
+- **Gemma**: GoogleのオープンソースLLM（ローカル実行可）。独自のAIシステム構築に利用可能。
 
 ---
 
@@ -59,22 +86,22 @@ AI技術はモデル単体ではなく、多様なプラットフォームやデ
 
 | 利用形態 | 特徴 | 主要なツール・名称 |
 | :--- | :--- | :--- |
-| **ブラウザ (Web UI)** | チャットUIを通じて対話的に使用する。最初のアイデア出しやコードレビューに最適。 | ChatGPT, Claude.ai, Gemini, Microsoft Copilot |
-| **デスクトップ APP** | 専用アプリ。ショートカット起動や画面共有機能など、OSと統合された便利な機能を持つ。 | ChatGPT Desktop, Claude Desktop, Microsoft Copilot |
-| **モバイル APP** | スマホやタブレットからアクセス。移動中のアイデア出しや音声でのやり取りに便利。 | ChatGPT (iOS/Android), Claude (iOS/Android), Gemini App |
-| **IDE 拡張機能** | エディタ内に直接統合され、コードを書いている最中にリアルタイムでアシストする。 | GitHub Copilot, Gemini in VS Code, Roo Cline (Cline) |
-| **CLI (Command Line)** | ターミナルから直接コマンドでAIを呼び出す。自動化スクリプトやパイプライン処理に強い。 | Claude Code, Gemini CLI, gh copilot |
-| **開発者向けプラットフォーム** | APIキーの発行、プロンプトの調整、モデルの挙動テスト、データ連携等を行う環境。 | **Google AI Studio**, OpenAI Platform (Playground), Anthropic Console |
-| **クラウド・インフラ (DB)** | AI開発に必要なデータ、ベクトルデータ、実行環境を管理するインフラ基盤。 | **MongoDB Atlas** (ベクトル検索・データホスティング), Vertex AI, Azure OpenAI |
+| **ブラウザ (Web UI)** | チャットUIを通じて対話的に使用する。最初のアイデア出しやコードレビューに最適。 | ChatGPT, Claude.ai, Gemini (gemini.google.com), Microsoft Copilot |
+| **デスクトップ APP** | 専用アプリ。ショートカット起動や画面共有・ローカルファイル連携など、OSと統合された機能を持つ。 | ChatGPT Desktop, Claude Desktop (Cowork機能搭載), Microsoft Copilot, Google Antigravity |
+| **モバイル APP** | スマホやタブレットからアクセス。移動中のアイデア出しや音声でのやり取りに便利。 | ChatGPT (iOS/Android), Claude (iOS/Android), Gemini App, Microsoft Copilot |
+| **IDE 拡張機能 / AI-native IDE** | エディタ内に直接統合され、コードを書いている最中にリアルタイムでアシストする。 | GitHub Copilot, Gemini in VS Code, Roo Cline (Cline), **Cursor** (AI-native IDE) |
+| **CLI (Command Line)** | ターミナルから直接コマンドでAIを呼び出す。自動化スクリプトやパイプライン処理、自律実行に強い。 | **Claude Code** (自律エージェント), **Gemini CLI**, gh copilot |
+| **開発者向けプラットフォーム (Developer Platform)** | APIキーの発行、プロンプトの調整、モデルの挙動テスト、データ連携等を行う環境。 | **Google AI Studio**, OpenAI Platform (Playground), Anthropic Console |
+| **クラウド・インフラ (DB / MLOps)** | AI開発に必要なデータ、ベクトルデータ、実行環境を管理するインフラ基盤。 | **MongoDB Atlas** (ベクトル検索・データホスティング), Vertex AI, Azure OpenAI Service, **MCP Atlas** |
 
 ### ② プラットフォーム別：提供ツール・インターフェース対応表
 
 | プラットフォーム | ブラウザ (Web) | デスクトップ App | モバイル App | IDE拡張 / 専用IDE | CLI / エージェント | 開発者プラットフォーム |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **OpenAI / Microsoft** | ChatGPT, Microsoft Copilot | ChatGPT Desktop | ChatGPT App, Copilot App | GitHub Copilot | gh copilot | OpenAI Platform (Playground) |
-| **Anthropic** | Claude.ai | Claude Desktop | Claude App | Roo Cline (API連携), Cursor (連携) | **Claude Code** (自律エージェント) | Anthropic Console (Workbench) |
-| **Google** | Gemini Web | (PWA等のWeb対応) | Gemini App | Gemini in VS Code, Project IDX | Gemini CLI | **Google AI Studio**, Vertex AI |
-| **データ・インフラ** | **MongoDB Atlas** (Web UI) | Compass (GUIツール) | - | Atlas VS Code 拡張機能 | Atlas CLI | MongoDB Atlas (インフラ・ベクトルDB) |
+| **OpenAI / Microsoft** | ChatGPT, MS Copilot | ChatGPT Desktop, Copilot | ChatGPT App, Copilot App | GitHub Copilot | gh copilot | OpenAI Platform (Playground) |
+| **Anthropic** | Claude.ai | **Claude Desktop** (Cowork) | Claude App | Roo Cline (API連携), Cursor | **Claude Code** (CLIエージェント) | Anthropic Console (Workbench) |
+| **Google** | Gemini Web | **Google Antigravity** | Gemini App | Gemini in VS Code, Project IDX | **Gemini CLI** | **Google AI Studio**, Vertex AI |
+| **データ・インフラ** | **MongoDB Atlas** (Web UI) | Compass (GUIクライアント) | — | Atlas VS Code 拡張機能 | Atlas CLI | MongoDB Atlas (インフラ・ベクトルDB) |
 
 ---
 
@@ -86,13 +113,13 @@ AIと協調して開発を行うためのエージェントシステムや統合
 - **[Claude Code (Docs)](https://code.claude.com/docs/ja/overview)**: 
   - Anthropicが提供する自律型CLIエージェント。ターミナル上で動き、ファイルの検索、コードの書き換え、テストの実行までを自律的にこなします。
 - **[OpenAI Codex / Developer Platform](https://openai.com/ja-JP/codex/)**: 
-  - OpenAIが提供するコード生成APIやツールの紹介。現在の高度なコード生成アシスタントの先駆け。
+  - OpenAIが提供するコード生成APIやツールの紹介。GPT-5系列によって高精度なコード自動生成・レビューが可能です。
 - **[Gemini CLI (geminicli.com)](https://geminicli.com/)**: 
-  - Geminiのパワーをターミナルで手軽に利用するためのCLIツール群。
+  - Gemini 3.5 FlashのパワーをCLIで手軽に利用するためのツール群。
 - **[Cursor (cursor.com)](https://cursor.com/ja)**: 
-  - VS Codeをベースに開発された、AIネイティブな次世代コードエディタ。コードの自動補完（Copilot++）や、リポジトリ全体を考慮したチャット、コードの差分インライン編集などが非常に強力です。
+  - VS Codeをベースに開発された、AIネイティブな次世代コードエディタ。Gemini 3.1 Pro, Claude Sonnet 4.6など複数モデルを切り替え可能で、コードの差分インライン編集などが非常に強力です。
 - **[Visual Studio Code (VS Code)](https://code.visualstudio.com/)**: 
-  - デファクトスタンダードのコードエディタ。豊富なAI拡張機能（Marp, GitHub Copilot, Roo Clineなど）を追加することで、強力なAI開発環境に変貌します。
+  - デファクトスタンダードのコードエディタ。豊富なAI拡張機能（Marp, GitHub Copilot, Roo Cline, Gemini in VS Codeなど）を追加することで、強力なAI開発環境に変貌します。
 
 ---
 
@@ -100,19 +127,20 @@ AIと協調して開発を行うためのエージェントシステムや統合
 
 開発の初期段階でUI/UXのプロトタイプを素早く作成し、AIにコードへ落とし込ませるためのツールです。
 
-- **Figma Make**: Figma上でプロンプトからデザイン要素を自動生成したり、静止画からコンポーネントを構築する機能。
+- **Figma Make**: Figma上でプロンプトからデザイン要素を自動生成したり、静止画からコンポーネントを構築する機能。Gemini 3 Proとの連携により、高品質なプロトタイプを高速生成できます。
 - **Stitch**: UIコンポーネントの視覚的な構築やコードへのエクスポートを容易にするモダンなツール。
 
 ---
 
 ## 5. MCP (Model Context Protocol)
 
-**MCP (Model Context Protocol)** は、AIモデルが外部のデータソース、ツール, APIと安全かつ標準化された方法で安全に接続・通信するためのオープンソースプロトコルです。
+**MCP (Model Context Protocol)** は、AIモデルが外部のデータソース、ツール、APIと安全かつ標準化された方法で接続・通信するためのオープンソースプロトコルです。2026年現在、主要エージェント（Claude, Gemini, OpenAI）のほぼすべてがMCPに対応し、外部ツール連携のデファクトスタンダードになっています。
 
 - **[Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp)**:
   - AIエージェントがChromeブラウザのDevToolsを直接操作できるようにするMCPサーバー。AI自身がブラウザのコンソールログを確認したり、DOM構造を解析してデバッグすることが可能になります。
 - **[Figma MCP Catalog](https://www.figma.com/ja-jp/mcp-catalog/)**:
   - FigmaのデザインデータをAIがコンテキストとして正確に読み取るためのMCP連携。デザインの仕様やスタイルガイドを直接AIに参照させながらコーディングを進めることができます。
+- **MCP Atlas** (MongoDB): マルチステップのMCPワークフロー実行に特化したインフラ基盤。Gemini 3.5 Flashが83.6%のスコアを記録するなど、エージェントとの親和性が高い。
 
 ---
 
