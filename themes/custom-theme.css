@@ -7,7 +7,7 @@
 section {
   width: 1280px;
   height: 720px;
-  padding: 80px 100px;
+  padding: 100px 100px 80px 100px; /* 上部余白を調整しタイトル位置を固定 */
   box-sizing: border-box;
   
   /* 背景：ロゴカラーに馴染む温かみのある超淡色グレー */
@@ -20,10 +20,10 @@ section {
   /* 画像が白背景の場合でもグレー背景を活かすための乗算ブレンド */
   background-blend-mode: multiply; 
 
-  /* テキスト配置：左寄せ・上下中央 */
+  /* テキスト配置：左寄せ・上寄せ（タイトル位置統一のため） */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 垂直方向中央 */
+  justify-content: flex-start; /* 上寄せにすることでスライド間のタイトル位置を固定 */
   align-items: flex-start; /* 水平方向左寄せ */
   text-align: left;
 
@@ -188,22 +188,22 @@ pre code {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px; /* スクロールなしでスライドに収めるためにフォントサイズを縮小 */
 }
 
 table th {
   background-color: #EBC7C8; /* トーンダウンした赤のヘッダー背景 */
   color: #7F161A;
   border: 1px solid #D78F91;
-  padding: 10px 15px;
+  padding: 6px 12px; /* パディングを縮小 */
   font-weight: bold;
 }
 
 table td {
   border: 1px solid #D78F91;
-  padding: 10px 15px;
+  padding: 6px 12px; /* パディングを縮小 */
   background-color: #FFFFFF;
 }
 

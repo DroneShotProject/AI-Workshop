@@ -2,7 +2,6 @@
 marp: true
 theme: custom-theme
 paginate: true
-header: "AI-Workshop プレゼンテーション"
 footer: "© 2026 FUN ROBO LAB."
 ---
 
