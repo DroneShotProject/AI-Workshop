@@ -210,3 +210,121 @@ table td {
 table tr:nth-child(even) td {
   background-color: #F9EAEA; /* 縞模様用の薄い赤背景 */
 }
+
+/* ==========================================
+   自己紹介スライド用のレイアウトユーティリティ
+   ========================================== */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.6fr;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.intro-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-avatar img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.intro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 10px 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.intro-name {
+  font-size: 26px;
+  font-weight: bold;
+  color: #2B2B2B;
+}
+
+.intro-handle {
+  font-size: 14px;
+  color: #7F161A;
+  font-weight: bold;
+}
+
+.intro-badge {
+  background-color: #F9EAEA;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #7F161A;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #D78F91;
+}
+
+.intro-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.intro-card-white {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-left: 5px solid #AF1F24;
+}
+
+.intro-card-pink {
+  background-color: #F9EAEA;
+  border-radius: 12px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border: 1px solid #D78F91;
+}
+
+.intro-card-title-red {
+  font-size: 16px;
+  font-weight: bold;
+  color: #AF1F24;
+  margin-bottom: 4px;
+}
+
+.intro-card-title-dark {
+  font-size: 16px;
+  font-weight: bold;
+  color: #7F161A;
+  margin-bottom: 4px;
+}
+
+.intro-card-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.intro-card-list li {
+  margin-bottom: 2px;
+}
+.intro-card-list li:last-child {
+  margin-bottom: 0;
+}

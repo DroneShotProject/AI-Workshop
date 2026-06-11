@@ -13,6 +13,58 @@ footer: "© 2026 FUN ROBO LAB."
 
 ---
 
+## 👋 自己紹介
+
+<div class="intro-grid">
+  <div class="intro-avatar">
+    <img src="assets/self_intro_avatar.png" />
+  </div>
+  <div class="intro-content">
+    <div class="intro-header">
+      <div>
+        <div class="intro-name">Satoru Takahashi</div>
+        <div class="intro-handle">X: @cmd8051020498/Satoru</div>
+      </div>
+      <div class="intro-badge">GDGoC Organizer</div>
+    </div>
+    <div class="intro-row">
+      <div class="intro-card-white">
+        <div class="intro-card-title-red">🏢 所属</div>
+        <ul class="intro-card-list">
+          <li>公立はこだて未来大学</li>
+          <li>Dotto</li>
+          <li>GDGoC Hakodate</li>
+        </ul>
+      </div>
+      <div class="intro-card-white">
+        <div class="intro-card-title-red">🎯 運営・主催</div>
+        <ul class="intro-card-list">
+          <li>GDGoC Hakodate</li>
+        </ul>
+      </div>
+    </div>
+    <div class="intro-row">
+      <div class="intro-card-pink">
+        <div class="intro-card-title-dark">💻 好きな技術</div>
+        <ul class="intro-card-list">
+          <li>Flutter, Go</li>
+          <li>GitHub Copilot, Gemini CLI, Antigravity</li>
+          <li>アジャイル開発, スクラム</li>
+        </ul>
+      </div>
+      <div class="intro-card-pink">
+        <div class="intro-card-title-dark">🎨 趣味</div>
+        <ul class="intro-card-list">
+          <li>マラソン, スキー</li>
+          <li>航空管制, 飛行機乗り…etc</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
 ## 1. 本日のゴール (Workshop Goals)
 
 AIがコードを自動生成する時代において、エンジニアやプランナーが持つべき**マインドセットと本質的なスキル**を定義します。
