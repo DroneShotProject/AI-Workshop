@@ -194,6 +194,26 @@ AIがコードを自動生成する時代において、エンジニアやプラ
 
 ---
 
+## プロンプト指示（例）
+
+```text
+このデータを表示するWebアプリケーションを作りたい。
+
+[フレームワーク1]: React (Vite)
+[フレームワーク2]: TypeScript / Tailwind CSS
+UIコンポーネントは shadcn/ui を使って。
+
+データソースAPI:
+https://api.open-meteo.com/v1/forecast?latitude=41.841784&longitude=140.766926&hourly=temperature_2m&timezone=auto&past_days=0&forecast_days=7
+
+要件:
+1. 上記API（函館の7日間の気温予測データ）からデータを非同期で取得し、見やすいグラフ（Rechartsなど）で視覚化すること。
+2. shadcn/ui の Card や Button コンポーネントを使用し、ダッシュボード風のモダンなUIにすること。
+3. 気温が特定のしきい値（例: 25度以上）を超える時間帯をハイライトする機能を付けること。
+```
+
+---
+
 ## ハンズオンの流れ
 
 1. **プロジェクト初期化**: `npm create vite@latest` などを用いてエージェントにプロジェクトを作らせる。
