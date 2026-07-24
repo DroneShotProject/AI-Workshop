@@ -1,0 +1,330 @@
+/* @theme custom-theme */
+@import 'default';
+
+/* ==========================================
+   全体レイアウトと背景設定
+   ========================================== */
+section {
+  width: 1280px;
+  height: 720px;
+  padding: 100px 100px 80px 100px; /* 上部余白を調整しタイトル位置を固定 */
+  box-sizing: border-box;
+  
+  /* 背景：ロゴカラーに馴染む温かみのある超淡色グレー */
+  background-color: #F4F0F0; 
+  /* スライドテンプレート画像の重ね合わせ */
+  background-image: url("../assets/スライドテンプレート.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* 画像が白背景の場合でもグレー背景を活かすための乗算ブレンド */
+  background-blend-mode: multiply; 
+
+  /* テキスト配置：左寄せ・上寄せ（タイトル位置統一のため） */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 上寄せにすることでスライド間のタイトル位置を固定 */
+  align-items: flex-start; /* 水平方向左寄せ */
+  text-align: left;
+
+  /* 基本タイポグラフィ */
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", "Yu Gothic", Meiryo, sans-serif;
+  color: #2B2B2B; /* 基本テキスト色（純黒を避ける） */
+  font-size: 28px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   タイポグラフィと要素の装飾
+   ========================================== */
+h1 {
+  font-size: 56px;
+  color: #AF1F24; /* ロゴのメインカラー（赤） */
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 40px;
+  color: #AF1F24;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #AF1F24; /* ブランドカラーの下線 */
+  padding-bottom: 8px;
+  width: 100%;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 30px;
+  color: #7F161A; /* トーンダウンしたダークレッド */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+p, ul, ol {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* 強調文字（**太字**） */
+strong {
+  color: #7F161A; /* トーンダウンしたダークレッド */
+  font-weight: bold;
+}
+
+/* リンク */
+a {
+  color: #AF1F24;
+  text-decoration: none;
+  border-bottom: 1px dashed #AF1F24;
+}
+a:hover {
+  color: #7F161A;
+  border-bottom: 1px solid #7F161A;
+}
+
+/* リストの箇条書きマーク */
+ul > li::marker {
+  color: #D78F91; /* トーンダウンしたミディアムレッド */
+}
+
+/* ==========================================
+   ヘッダーとフッター (ページ番号)
+   ========================================== */
+header {
+  font-size: 18px;
+  color: #6E6E6E;
+  position: absolute;
+  top: 40px;
+  left: 100px;
+  width: calc(100% - 200px);
+  border-bottom: 1px solid #D78F91;
+  padding-bottom: 6px;
+}
+
+footer {
+  font-size: 16px;
+  color: #6E6E6E;
+  position: absolute;
+  bottom: 35px;
+  left: 100px;
+}
+
+/* ページ番号（右下） */
+section::after {
+  font-size: 16px;
+  color: #6E6E6E;
+  content: attr(data-marpit-pagination);
+  position: absolute;
+  bottom: 35px;
+  right: 100px;
+}
+
+/* ==========================================
+   レイアウトクラス: 中扉（セクションスライド）
+   ========================================== */
+/* 使用方法: <!-- _class: chapter --> */
+section.chapter {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+section.chapter h1 {
+  font-size: 64px;
+  color: #AF1F24;
+  margin-bottom: 10px;
+}
+
+section.chapter h2 {
+  font-size: 32px;
+  color: #7F161A;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 0;
+}
+
+/* 中扉スライドではヘッダーを非表示にする */
+section.chapter header {
+  display: none;
+}
+
+/* ==========================================
+   コードブロックと表のスタイリング
+   ========================================== */
+/* インラインコード */
+code {
+  font-family: Consolas, Monaco, Menlo, monospace;
+  background-color: #F9EAEA; /* トーンダウンした薄い赤の背景 */
+  color: #7F161A;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* 複数行コードブロック */
+pre {
+  background-color: #2B2B2B; /* 暗色背景でコードの視認性を確保 */
+  border-left: 6px solid #AF1F24; /* 左端にブランドカラーのアクセント */
+  padding: 20px;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+pre code {
+  background-color: transparent;
+  color: #F4F0F0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* テーブル（表） */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px; /* スクロールなしでスライドに収めるためにフォントサイズを縮小 */
+}
+
+table th {
+  background-color: #EBC7C8; /* トーンダウンした赤のヘッダー背景 */
+  color: #7F161A;
+  border: 1px solid #D78F91;
+  padding: 6px 12px; /* パディングを縮小 */
+  font-weight: bold;
+}
+
+table td {
+  border: 1px solid #D78F91;
+  padding: 6px 12px; /* パディングを縮小 */
+  background-color: #FFFFFF;
+}
+
+table tr:nth-child(even) td {
+  background-color: #F9EAEA; /* 縞模様用の薄い赤背景 */
+}
+
+/* ==========================================
+   自己紹介スライド用のレイアウトユーティリティ
+   ========================================== */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.6fr;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.intro-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-avatar img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.intro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 10px 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.intro-name {
+  font-size: 26px;
+  font-weight: bold;
+  color: #2B2B2B;
+}
+
+.intro-handle {
+  font-size: 14px;
+  color: #7F161A;
+  font-weight: bold;
+}
+
+.intro-badge {
+  background-color: #F9EAEA;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #7F161A;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #D78F91;
+}
+
+.intro-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.intro-card-white {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-left: 5px solid #AF1F24;
+}
+
+.intro-card-pink {
+  background-color: #F9EAEA;
+  border-radius: 12px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border: 1px solid #D78F91;
+}
+
+.intro-card-title-red {
+  font-size: 16px;
+  font-weight: bold;
+  color: #AF1F24;
+  margin-bottom: 4px;
+}
+
+.intro-card-title-dark {
+  font-size: 16px;
+  font-weight: bold;
+  color: #7F161A;
+  margin-bottom: 4px;
+}
+
+.intro-card-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.intro-card-list li {
+  margin-bottom: 2px;
+}
+.intro-card-list li:last-child {
+  margin-bottom: 0;
+}
